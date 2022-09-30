@@ -19,10 +19,12 @@ func main() {
 	enforcer, _ := casbin.NewEnforcer("model.conf", adapter)
 	enforcer.LoadPolicy()
 
-	enforcer.AddNamedPolicy("p", "alice", "data1", "read")
-	enforcer.AddNamedPolicy("p", "data2_admin", "data2", "read")
-	enforcer.AddNamedPolicy("p", "data2_admin", "data2", "write")
-	enforcer.AddNamedPolicy("g", "alice", "data2_admin")
+	enforcer.AddPolicy("alice", "data1", "read")
+	enforcer.AddPolicy("data2_admin", "data2", "read")
+	enforcer.AddPolicy("data2_admin", "data2", "write")
+	enforcer.AddGroupingPolicy("alice", "data2_admin")
+
+	enforcer.SavePolicy()
 
 	res, _ := enforcer.Enforce(os.Args[1], os.Args[2], os.Args[3])
 	if res {
@@ -30,6 +32,4 @@ func main() {
 	} else {
 		fmt.Println("Access denied")
 	}
-
-	enforcer.SavePolicy()
 }
