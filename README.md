@@ -1,5 +1,5 @@
-# go-casbin-rabc-mysql-example
-An example of how to use casbin as an RABC service with MySQL-based configuration
+# go-casbin-rbac-mysql-example
+An example of how to use casbin as an RBAC service with MySQL-based configuration
 
 # Setup
 ## Install dependencies
@@ -21,7 +21,7 @@ $ go build server/main.go
 ```
 
 # Configuration
-The ACL policy is provided programmatically within the `main` function
+The RBAC policy is provided programmatically within the `main` function
 ```go
 enforcer.AddNamedPolicy("p", "alice", "data1", "read")
 enforcer.AddNamedPolicy("p", "data2_admin", "data2", "read")
