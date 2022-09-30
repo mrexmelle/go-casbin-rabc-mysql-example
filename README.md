@@ -23,10 +23,10 @@ $ go build server/main.go
 # Configuration
 The RBAC policy is provided programmatically within the `main` function
 ```go
-enforcer.AddNamedPolicy("p", "alice", "data1", "read")
-enforcer.AddNamedPolicy("p", "data2_admin", "data2", "read")
-enforcer.AddNamedPolicy("p", "data2_admin", "data2", "write")
-enforcer.AddNamedPolicy("g", "alice", "data2_admin")
+enforcer.AddPolicy("alice", "data1", "read")
+enforcer.AddPolicy("data2_admin", "data2", "read")
+enforcer.AddPolicy("data2_admin", "data2", "write")
+enforcer.AddGroupingPolicy("alice", "data2_admin")
 ```
 
 The definition of each line within the code quote defines that:
