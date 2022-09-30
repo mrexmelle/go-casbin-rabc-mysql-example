@@ -1,0 +1,11 @@
+name: Enhancement Request
+description: An enhancement request
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: The expected outcome
+      placeholder: What did you hope to change?
+

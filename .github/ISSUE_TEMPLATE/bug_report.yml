@@ -1,0 +1,23 @@
+name: Bug Report
+description: A bug report
+labels: ["bug"]
+body:
+  - type: textarea
+    id: fault
+    attributes:
+      label: Fault
+      description: The current situation
+      placeholder: What did you experience?
+  - type: textarea
+    id: expectation
+    attributes:
+      label: Expectation
+      description: The expected situation
+      placeholder: What did you hope?
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The reproducible steps leading to the fault
+      placeholder: How can we reproduce?
+
