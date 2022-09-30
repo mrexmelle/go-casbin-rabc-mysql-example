@@ -1,4 +1,4 @@
-module github.com/mrexmelle/go-casbin-rabc-mysql-example
+module github.com/mrexmelle/go-casbin-rbac-mysql-example
 
 go 1.18
 
